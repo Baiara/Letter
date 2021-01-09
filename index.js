@@ -11,10 +11,20 @@ input.addEventListener('input', function () {
 
 
 btn.addEventListener('click', () => {
-    let red = Math.random() * 255;
-    let green = Math.random() * 255;
-    let blue = Math.random() * 255;
-    console.log(red)
-    body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+    setInterval(() => {
+        let red = Math.random() * 255;
+        let green = Math.random() * 255;
+        let blue = Math.random() * 255;
+        body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+        btn.style.backgroundColor = `rgb(${green},${blue},${red})`;
+    }, 500);
+    btn.setAttribute('disabled', true)
+})
+
+btn.addEventListener('click', () => {
+    setInterval(() => {
+        btn.classList.toggle('btn');
+    }, 500);
+
 })
 
